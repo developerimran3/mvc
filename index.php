@@ -29,7 +29,7 @@ if (file_exists(__DIR__ . "/autoload.php")) {
 
                     <!-- Form Control -->
                     <div class="card-head">
-                        <h2>Add Deves</h2>
+                        <h2>Create New Developer</h2>
                     </div>
                     <div class="card-body">
                         <form action="" method="POST" enctype="multipart/form-data">
@@ -89,7 +89,11 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                                     <td>25</td>
                                     <td>Laravel</td>
                                     <td>Dhaka</td>
-                                    <td><button class="btn btn-sm"></button></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info" href="signalview.php"> <i class="fa fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-warning" href=""> <i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-danger" href=""> <i class="fa fa-trash"></i></a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
