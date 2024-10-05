@@ -30,24 +30,28 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                     <div class="card-body">
                         <img class="card-img" src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg" alt="">
                         <div class="signal-view">
-                            <h1>Name</h1>
-                            <span>:</span>
-                            <h2>Rakib</h2>
-                        </div>
-                        <div class="signal-view">
-                            <h1>Age</h1>
-                            <span>:</span>
-                            <h2>25</h2>
-                        </div>
-                        <div class="signal-view">
-                            <h1>Skill</h1>
-                            <span>:</span>
-                            <h2>dess</h2>
-                        </div>
-                        <div class="signal-view">
-                            <h1>Location</h1>
-                            <span>:</span>
-                            <h2>sss</h2>
+                            <table>
+                                <tr>
+                                    <td>Name</td>
+                                    <td> :</td>
+                                    <td>md imran hossen</td>
+                                </tr>
+                                <tr>
+                                    <td>Age</td>
+                                    <td>:</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>Skill</td>
+                                    <td>:</td>
+                                    <td>devs</td>
+                                </tr>
+                                <tr>
+                                    <td>Location</td>
+                                    <td>:</td>
+                                    <td>dhaka</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

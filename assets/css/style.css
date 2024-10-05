@@ -1,5 +1,5 @@
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: poppins;
 }
 
 .card-head h2 {
@@ -16,22 +16,19 @@ tbody tr td img {
   border-radius: 50%;
   object-fit: cover;
 }
-.signal-view {
-  display: flex;
-  align-items: baseline;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.signal-view h1 {
-  font-size: 20px;
+
+/* View Page */
+.signal-view table tr td:nth-child(1) {
+  font-size: 22px;
   font-weight: bold;
-  margin-right: 10px;
 }
-.signal-view span {
-  font-size: 20px;
+.signal-view table tr td:nth-child(2) {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 20px 0 20px;
 }
-.signal-view h2 {
-  font-size: 15px;
+
+.signal-view table tr td:nth-child(3) {
+  font-size: 18px;
   text-transform: capitalize;
-  margin-left: 15px;
 }
