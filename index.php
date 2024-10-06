@@ -21,6 +21,37 @@ if (file_exists(__DIR__ . "/autoload.php")) {
 
 <body>
 
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $skill = $_POST['skill'];
+        $location = $_POST['location'];
+
+
+        //form valadition
+        if (empty($name) || empty($age) || empty($skill) || empty($location)) {
+            $msg = createAlert('All Fields Are Requeard');
+        } else {
+
+            $file_name = move($_FILES['photo'], "assets/img/");
+
+            create("db/data.JSON",  [
+                "id"        => createId('deves'),
+                "name"      => $name,
+                "age"       => $age,
+                "skill"     => $skill,
+                "location"  => $location,
+                "photo"     => $file_name
+            ]);
+            $msg = createAlert('Data Submited', 'success');
+        }
+    }
+
+
+
+    ?>
+
 
     <div class="container my-5">
         <div class="row ">
@@ -32,6 +63,9 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                         <h2>Create New Developer</h2>
                     </div>
                     <div class="card-body">
+                        <div class="msg">
+                            <?php echo $msg ?? '' ?>
+                        </div>
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="my-3">
                                 <input type="hidden" class="form-control" name="id" value="">
@@ -82,19 +116,24 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img src="https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg" alt=""></td>
-                                    <td>imran</td>
-                                    <td>25</td>
-                                    <td>Laravel</td>
-                                    <td>Dhaka</td>
-                                    <td>
-                                        <a class="btn btn-sm btn-info" href="signalview.php"> <i class="fa fa-eye"></i></a>
-                                        <a class="btn btn-sm btn-warning" href=""> <i class="fa fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" href=""> <i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                                <?php
+                                $data = all('db/data.JSON');
+                                foreach ($data as $item):
+                                ?>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img src="assets/img/<?php echo $item->photo; ?>" alt=""></td>
+                                        <td><?php echo $item->name; ?></td>
+                                        <td><?php echo $item->age; ?></td>
+                                        <td><?php echo $item->skill; ?></td>
+                                        <td><?php echo $item->location; ?></td>
+                                        <td>
+                                            <a class="btn btn-sm btn-info" href="signalview.php?id=<?php echo $item->id; ?>"> <i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-sm btn-warning" href=""> <i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-sm btn-danger" href=""> <i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
