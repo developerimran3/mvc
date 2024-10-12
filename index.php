@@ -52,12 +52,10 @@ if (file_exists(__DIR__ . "/autoload.php")) {
 
     ?>
 
-
     <div class="container my-5">
         <div class="row ">
             <div class="col-md-4">
                 <div class="card shadow-sm">
-
                     <!-- Form Control -->
                     <div class="card-head">
                         <h2>Create New Developer</h2>
@@ -99,6 +97,9 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                     </div>
                 </div>
             </div>
+
+
+
             <!-- All Developer Show -->
             <div class="col-md-8">
                 <div class="card shadow-sm">
@@ -129,7 +130,8 @@ if (file_exists(__DIR__ . "/autoload.php")) {
                                         <td><?php echo $item->location; ?></td>
                                         <td>
                                             <a class="btn btn-sm btn-info" href="signalview.php?id=<?php echo $item->id; ?>"> <i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-sm btn-warning" href=""> <i class="fa fa-edit"></i></a>
+
+                                            <a class="btn btn-sm btn-warning" href="signaledit.php?id=<?php echo $item->id; ?>"> <i class=" fa fa-edit"></i></a>
                                             <a class="btn btn-sm btn-danger" href=""> <i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
